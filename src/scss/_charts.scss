@@ -15,7 +15,7 @@ p {
   .source {
     font-family: "Benton Sans", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    font-size:0.8em;
+    font-size:1em;
     line-height:140%;
     color: #333333;
     text-align:left;
@@ -157,8 +157,7 @@ p {
   
   
   .slide {
-
-    margin-bottom:50px;
+      font-family: "Benton Sans", Helvetica, Arial, sans-serif;
       
       .byline a {
           color: #888 !important;
@@ -167,7 +166,7 @@ p {
           line-height: 140%;
           font-family: "Benton Sans", Helvetica, Arial, sans-serif;
           font-weight: 400;
-          font-size: 0.6em;
+          font-size: 1em;
           color: #888;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -179,17 +178,6 @@ p {
       .chart .c3-line {
           stroke-width: 6px !important;
       }
-    //   .chart-tooltip {
-    //       background-color: rgba(0, 0, 0, 0.8);
-    //       color: #FFFFFF;
-    //       font-size: 0.85em;
-    //       padding: 0.5em 1em;
-    //       .tooltip-label {
-    //           font-weight: 900;
-    //           display: inline-block;
-    //           padding-right: 0.5em;
-    //       }
-    //   }
     #named {
         text-decoration:underline;
     }
