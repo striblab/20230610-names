@@ -14,9 +14,9 @@ PROJ_NAME=$(cat package.json | jq -r .name)
 echo $PROJ_NAME
 
 if [ "$DEPLOYTO" == "production" ]; then
-  DEPLOY_PATH="s3://static.startribune.com/news/projects/all/20230610-names"
+  DEPLOY_PATH="s3://static.startribune.com/news/projects/all/"$PROJ_NAME
 elif [ "$DEPLOYTO" == "staging" ]; then
-  DEPLOY_PATH="s3://static.startribune.com/staging/news/projects/all/20230610-names"
+  DEPLOY_PATH="s3://static.startribune.com/staging/news/projects/all/"$PROJ_NAME
 fi
 
 if [ "$DEPLOY_PATH" != "" ]; then
