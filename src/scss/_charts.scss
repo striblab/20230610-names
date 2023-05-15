@@ -46,7 +46,16 @@ p {
   
   text {
     font-family: "Benton Sans", Helvetica, Arial, sans-serif !important;
+
+
   }
+
+    .c3 text {
+        font-size:1.2em !important;
+              @media (max-width:520px) {
+          font-size:1em !important;
+      }
+    }
   
   p {
       max-width: 520px;
@@ -401,9 +410,6 @@ p {
           color: #fff;
       }
       /*-- Chart --*/
-      .c3 text {
-        font-size:1.2em !important;
-      }
 
       .c3 svg {
           font: 10px sans-serif;
