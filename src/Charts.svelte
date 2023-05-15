@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import c3 from 'c3';
 
 import { onMount } from 'svelte';
-import * as jq from 'jquery';
+import jqx from 'jquery';
 
 import rows from './data/names.json';
 import rows20b from './data/top20_boys.json';
@@ -17,12 +17,6 @@ function toTitleCase(str)
 {
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
-
-// jq.urlParam = function(name){
-//   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-//   if (results != null) { return results[1]; }
-//   else { return 0; }
-// }
 
 function urlParam(name) {
   var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -143,7 +137,7 @@ if (year2 != 2021) {
           birthNum2 = 0;
 }
 
-jq("#infobox").html('<div class="chart-tooltip">' +
+jqx("#infobox").html('<div class="chart-tooltip">' +
   '<div class="tooltip-label">' + year + '</div></div>' +
   '<div class="chart-tooltip"><div class="tooltip-label">Rate</div>' + 
   '<div class="tooltip-value" style="color:#dea381;font-weight:900;">' + d3.format(".1f")(rate) + '</div></div>' +
@@ -151,7 +145,7 @@ jq("#infobox").html('<div class="chart-tooltip">' +
   '<div class="tooltip-value">' + d3.format(",")(birthNum) + '</div>' +
   '</div>');
 
-jq("#infobox2").html('<div class="chart-tooltip ">' +
+jqx("#infobox2").html('<div class="chart-tooltip ">' +
     '<div class="tooltip-label">' + year2 + '</div></div>' +
     '<div class="chart-tooltip"><div class="tooltip-label">Rate</div>' + 
     '<div class="tooltip-value" style="color:#B6AED4;font-weight:900;">' + d3.format(".1f")(rate2) + '</div></div>' +
@@ -250,7 +244,7 @@ var share = "#B0BEC5";
           }
         }
 
-          jq("#infobox").html('<div class="chart-tooltip">' +
+          jqx("#infobox").html('<div class="chart-tooltip">' +
             '<div class="tooltip-label">' + d[0].x + '</div></div>' +
             '<div class="chart-tooltip"><div class="tooltip-label">Rate</div>' + 
             '<div class="tooltip-value" style="color:#dea381;font-weight:900;">' + defaultValueFormat(d[0].value) + '</div></div>' +
@@ -258,7 +252,7 @@ var share = "#B0BEC5";
             '<div class="tooltip-value">' + d3.format(",")(birthNum) + '</div>' +
             '</div>');
 
-          jq("#infobox2").html('<div class="chart-tooltip ">' +
+          jqx("#infobox2").html('<div class="chart-tooltip ">' +
             '<div class="tooltip-label">' + d[1].x + '</div></div>' +
             '<div class="chart-tooltip"><div class="tooltip-label">Rate</div>' + 
             '<div class="tooltip-value" style="color:#B6AED4;font-weight:900;">' + defaultValueFormat(d[1].value) + '</div></div>' +
@@ -270,7 +264,7 @@ var share = "#B0BEC5";
       }
 });
     } else if (initial == false) {
-        jq("#message").html("Rate per 10,000 births by year"); 
+        jqx("#message").html("Rate per 10,000 births by year"); 
         chart.load({
             columns:[
                 dataStreamM,
@@ -280,7 +274,7 @@ var share = "#B0BEC5";
     }
 
 if (found == false) { 
-    jq("#message").html("Name not found"); 
+    jqx("#message").html("Name not found"); 
     chart.load({
         unload: ['M', 'F']
     });
@@ -425,27 +419,27 @@ if (found == false) {
         if (urlParam('name') != 0 ) { 
              mainname = toTitleCase(urlParam('name')); 
 
-      jq("#named, #named2").html(mainname);
+      jqx("#named, #named2").html(mainname);
 
     } else {
         mainname = "Everleigh";
-        jq("#named, #named2").html(mainname);
+        jqx("#named, #named2").html(mainname);
     }
 
 
 		switchChart(mainname,true);
 
-		jq( document ).ready(function() {
+		jqx( document ).ready(function() {
 
-		 jq('#filter_box').keyup(function(e){
-		  mainname = toTitleCase(jq('#filter_box').val()); 
+		 jqx('#filter_box').keyup(function(e){
+		  mainname = toTitleCase(jqx('#filter_box').val()); 
 
 		      if(e.keyCode == 13)
 		      {
-		          jq("#named, #named2").html(mainname);
+		          jqx("#named, #named2").html(mainname);
 		          switchChart(mainname,false);
 		          history.pushState({urlPath:'/?name=' + mainname},"",'./?name=' + mainname);
-		          // window.history.href = './?chart=lookup&name=' + jq('#filter_box').val();
+		          // window.history.href = './?chart=lookup&name=' + jqx('#filter_box').val();
 		        
 		      }
 
@@ -455,13 +449,13 @@ if (found == false) {
 
 		//top 20 boys
 		  for (var i=0; i < data20b.length; i++){
-		    jq("#namesList").append('<div class="chart-tooltip"><div class="tooltip-label">' + data20b[i].NAME + '</div>' + 
+		    jqx("#namesList").append('<div class="chart-tooltip"><div class="tooltip-label">' + data20b[i].NAME + '</div>' + 
 		            '<div class="tooltip-value" style="color:#dea381;font-weight:900;">' + d3.format(".1f")(data20b[i].RatePer10k) + '</div></div>');
 		  }
 
 		//top 20 girls
 		  for (var i=0; i < data20g.length; i++){
-		    jq("#namesList2").append('<div class="chart-tooltip"><div class="tooltip-label">' + data20g[i].NAME + '</div>' + 
+		    jqx("#namesList2").append('<div class="chart-tooltip"><div class="tooltip-label">' + data20g[i].NAME + '</div>' + 
 		            '<div class="tooltip-value" style="color:#B6AED4;font-weight:900;">' + d3.format(".1f")(data20g[i].RatePer10k) + '</div></div>');
 		  }
 		chartTypeM();
