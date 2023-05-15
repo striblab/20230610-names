@@ -289,7 +289,7 @@ if (found == false) {
             top: 20,
             right: 60,
             bottom: 20,
-            left: 80,
+            left: 100,
         };
 
         var chartType = c3.generate({
@@ -356,7 +356,7 @@ if (found == false) {
                 top: 20,
                 right: 60,
                 bottom: 20,
-                left: 80,
+                left: 100,
             };
 
             var chartType = c3.generate({
