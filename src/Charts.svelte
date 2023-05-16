@@ -460,6 +460,8 @@ if (found == false) {
 		  }
 		chartTypeM();
 		chartTypeF();
+
+        console.log("loaded");
     });
 </script>
 
