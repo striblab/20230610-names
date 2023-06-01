@@ -45,7 +45,7 @@ function switchChart(name,initial){
     var birthNum = 0;
     var birthNum2 = 0;
 
-    for (var j=1930; j<=2021; j++){
+    for (var j=1930; j<=2022; j++){
     axis[indexYear] = j;
     dataStreamM[indexYear] = 0;
     dataStreamF[indexYear] = 0;
@@ -125,15 +125,15 @@ axis[axis.length] = "2028";
 axis[axis.length] = "2029";
 axis[axis.length] = "2030";
 
-if (year != 2021) {
+if (year != 2022) {
           rate = 0;
-          year = 2021;
+          year = 2022;
           birthNum = 0;
 }
 
-if (year2 != 2021) {
+if (year2 != 2022) {
           rate2 = 0;
-          year2 = 2021;
+          year2 = 2022;
           birthNum2 = 0;
 }
 
@@ -190,7 +190,7 @@ var share = "#B0BEC5";
         },
         point: {
             show: true,
-            r: function(d) { if (d.x == 2021) { return 3;} else { return 2; } }
+            r: function(d) { if (d.x == 2022) { return 3;} else { return 2; } }
         },
     axis: {
       y: {
@@ -298,8 +298,8 @@ if (found == false) {
             data: {
                 x: 'x',
                 columns: [
-                    ["x","Walker","Ace","Hayes","Thiago","Archie","Adriel","Legend","Crew","Watson","Callum","Mohamedamin","Khalil","Callahan","Mac","Apollo","Zion","Barrett","Casey","Davis","Kobe","Koda","Kylo","Niko","Luka","Forrest"],
-                    ['value', 4.527,4.273,3.488,3.182,3.133,3,2.867,2.805,2.692,2.515,2.333,2.091,2.077,1.933,1.923,1.769,1.692,1.667,1.667,1.667,1.667,1.667,1.533,1.476,1.462]
+                    ["x","Mac","Callahan","Kenji","Crew","Hayes","Zion","Thiago","Walker","Callan","Baylor","Sonny","Baker","Luka","Zeke","Archer","Callum","Enzo","Bo","Archie","Madden","Colson","Kyler","Colby","Tate","Wilder"],
+                    ["value",4.737,3.913,3.263,3.111,2.767,2.694,2.667,2.571,2.537,2.522,2.423,2.348,2.34,2.158,1.981,1.951,1.867,1.833,1.796,1.783,1.737,1.659,1.609,1.602,1.585]
                 ],
                 type: 'bar',
                 labels: {
@@ -365,8 +365,8 @@ if (found == false) {
                 data: {
                     x: 'x',
                     columns: [
-                          ["x","Everleigh","Sutton","Maeve","Margo","Lainey","Collins","Sage","Astrid","Octavia","Hallie","Loretta","Florence","Elisa","Leni","Navy","Blakely","Carmen","Oaklynn","Blair","Matilda","Raya","Wren","Winter","Annalise","Julianna"],
-                          ["value",5.152,4.8,3.667,3.32,3.288,2.897,2.424,2.273,2.211,2.152,2,1.879,1.81,1.81,1.81,1.798,1.793,1.763,1.739,1.739,1.72,1.66,1.606,1.571,1.571]
+                            ["x","Stevie","Berkley","Florence","Alora","Wren","Valeria","Haisley","Sage","Sidra","Lettie","Maeve","Sutton","Kehlani","Juniper","Oaklynn","Sylvie","Remi","Raya","Alayah","Maliyah","Viola","Lyra","Adley","Oaklee","Tatum"],
+                            ["value",3.571,2.952,2.952,2.476,2.457,2.367,2.346,2.091,2.067,2.048,2.047,2.026,1.90,1.883,1.882,1.836,1.794,1.674,1.619,1.619,1.619,1.526,1.431,1.381,1.359]
                     ],
                     type: 'bar',
                     labels: {
@@ -422,7 +422,7 @@ if (found == false) {
       jqx("#named, #named2").html(mainname);
 
     } else {
-        mainname = "Everleigh";
+        mainname = "Stevie";
         jqx("#named, #named2").html(mainname);
     }
 
